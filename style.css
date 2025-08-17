@@ -3,26 +3,53 @@
     box-sizing: border-box;
 }
 
-.board {
-    display: grid;
-    grid-template-columns: repeat(7, 1fr);
-    width: calc(7 * 25px);
-    height: 25px;
+h1 {
+    text-align: center;
 }
 
-.selected {
-    border: salmon 1px solid;
+.board {
+    display: grid;
+    grid-template-columns: repeat(7, 40px);
+    grid-template-rows: repeat(7, 40px);
+    gap: 4px;
+    width: fit-content;
+    margin: 40px auto;
+    background: #eeeeeede;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.cell {
+    width: 40px;
+    height: 40px;
+    background: #cfcfcf;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    cursor: pointer;
+}
+
+.cell.invalid {
+    background: transparent;
+    border: none;
+    pointer-events: none;
 }
 
 .disc {
-    width: 100%;
-    height: 100%;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: #333;
+    border: 2px solid #222;
 }
 
-.disc[data-color='black'] {
-    background-color: black;
+.disc.empty {
+    background: #fff;
+    border: 2px dashed #aaa;
 }
 
-.disc[data-color='white'] {
-    background-color: lightgrey;
+.selected {
+    border: 2px solid salmon;
 }
